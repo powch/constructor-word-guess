@@ -21,9 +21,14 @@ function Word() {
         return displayArr.join(' ');
     },
     this.letterGuess = (guess) => {
+        let letterChanged = false;
         this.letterArray.forEach((key) => {
-            key.letterCheck(guess);
+            let foo = key.letterCheck(guess);
+            if (!letterChanged && foo) {
+                letterChanged = true;
+            }
         });
+        return letterChanged;
     }
 }
 

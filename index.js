@@ -26,8 +26,16 @@ const game = () => {
                 message:'Guess a letter!'
             }
         ]).then((answers) => {
-            newWord.letterGuess(answers.guessedLetter.toUpperCase());
-            game();
+            let letterChange = newWord.letterGuess(answers.guessedLetter.toUpperCase());
+            if (letterChange) {
+                console.log(`-------------------
+Correct!`);
+                game();    
+            } else {
+                console.log(`-------------------
+Incorrect!`);
+                game();
+            }
         });
     } else if (wordGuessed === -1) {
         console.log("Good job! Here's a new word!");

@@ -9,9 +9,12 @@ function Letter(letter) {
         }
     },
     this.letterCheck = (guess) => {
+        let letterChanged = false;
         if (guess === this.letter) {
             this.isGuessed = true;
+            letterChanged = true;
         }
+        return letterChanged;
     }
 }
 
