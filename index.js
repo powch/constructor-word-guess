@@ -32,8 +32,9 @@ const game = () => {
 Correct!`);
                 game();    
             } else {
+                guesses -= 1;
                 console.log(`-------------------
-Incorrect!`);
+Incorrect! You have ${guesses} guesses remaining.`);
                 game();
             }
         });
@@ -41,6 +42,8 @@ Incorrect!`);
         console.log("Good job! Here's a new word!");
         newWord.arrayMake(chosenWord());
         game();
+    } else if (guesses === 0) {
+        console.log('Game Over! Try again!');
     }
 }
 
