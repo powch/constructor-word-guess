@@ -7,9 +7,9 @@ const chosenWord = () => {
     return chosenWord;
 }
 
-
 let newWord = new Word();
 newWord.arrayMake(chosenWord());
+
 
 
 let guesses = 10;
@@ -30,7 +30,9 @@ const game = () => {
             game();
         });
     } else if (wordGuessed === -1) {
-        console.log('yay')
+        console.log("Good job! Here's a new word!");
+        newWord.arrayMake(chosenWord());
+        game();
     }
 }
 
